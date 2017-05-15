@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+            list-style: none;
+        }
+        html,body{
+            margin: 0;
+           height: 100%;
+            font-family: "PingFang SC Regular";
+            font-size: 14px;
+
+        }
+        body{
+            display: flex;
+            flex-direction: column;//方向为纵向
+        }
+        .titles{
+            width: 100%;
+            height: 100px;
+            float: left;
+            background: palegreen;
+            font-size: 20px;
+            padding: 20px;
+            line-height:60px;
+            font-weight: 800;
+        }
+        .inputarea{
+               float: left;
+               height: 50px;
+        }
+        #text{
+            width: 400px;
+            height: 50px;
+            float: left;
+        }
+        #submit{
+            width: 100px;
+            height: 50px;
+            background: springgreen;
+            border: 0;
+            float: left;
+            font-size: 16px;
+            border-radius: 5%;
+            text-align: center;
+            line-height: 50px;
+        }
+        #submit:focus{
+            outline: 0;
+        }
+        .show{
+            float: left;
+            background: #cccccc;
+            flex-grow:1;
+        }
+        .show .ti{
+            width: 50%;
+            float: left;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            color: red;
+        }
+        .show .plan{
+            width: 50%;
+            height:80%;
+            float: left;
+            border-bottom:1px solid #fff;
+            background:limegreen;
+        }
+        .show .plan li{
+            width: 100%;
+        }
+        .show .done li{
+            width: 100%;
+        }
+        .show ul li span{
+            width: 300px;
+            height:auto;
+            text-align: center;
+            line-height: 30px;
+        }
+        .show ul li time{
+            float: right;
+            width:150px;
+            background: red;
+            height:auto;
+            text-align: center;
+            line-height: 30px;
+        }
+        .show .done{
+            width: 50%;
+            height:80%;
+            float:right;
+            border-bottom: 1px solid #fff;
+            background:dodgerblue;
+        }
+        .show ul li input{
+            float: left;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="titles">TEXT LIST</div>
+    <div class="inputarea">
+        <input type="text" id="text">
+        <input type="button" id="submit" value="提交">
+    </div>
+    <div class="show">
+            <div class="ti">未完成</div>
+            <div class="ti">已完成</div>
+        <ul class="plan">
+            <li>
+                <input type="checkbox">
+                <span contenteditable="true">zzzzzzzzzzzz</span>
+                <time>2017-5-3 16:16</time>
+
+            </li>
+        </ul>
+        <ul class="done">
+            <li>
+                <input type="checkbox">
+                <span contenteditable="true">zzzzzzzzzzzz</span>
+                <time>2017-5-3 16:16</time>
+
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+//思路   点击事件 获取内容  判断内容是否为空 获取数据 放入 时间函数获取日期 获取时间
+//获取函数 保存函数
+//绘制函数   获取数据  声明两个空字符串 遍历数据   判断done
+//时间函数 获取日期   设置时间 setTime  返回 date.getFullYear
+     var text=document.querySelector("#text");
+     var button=document.querySelector("#submit");
+     var plan=document.querySelector(".plan");
+     var done=document.querySelector(".done");
+   console.log(text,button,plan,done)
+    function getData() {
+        return localStorage.book?JSON.parse(localStorage.book):[];
+    }
+    function saveData(data) {
+        localStorage.book=JSON.stringify(data);
+    }
+     button.onclick=function () {
+         if(text.value==""){
+             return;
+         }
+         var val=text.value;
+         text.value="";//提交完清空
+         var data=getData();
+         var date=new Date();
+         var time=date.getTime();
+         data.push({content:val,time,done:false});
+         saveData(data);
+         rewrite();
+     }
+    function rewrite() {
+        var data=getData();
+        var str1=""; var str2="";//未完成和已完成
+        data.forEach(function (v,i) {
+            if(!v.done){
+                str1+=`<li id="${i}"><input type="checkbox" onfocus="changestate(this)"><span contenteditable="true" onblur="changecontent(this)">${v.content}</span><time>${time(v.time)}</time></li>`
+            }else{
+                str2+=`<li id="${i}"><input type="checkbox" onfocus="del(this)"><span contenteditable="true">${v.content}</span><time>${time(v.time)}</time></li>`
+            }
+        })
+        plan.innerHTML=str1;
+        done.innerHTML=str2;
+    }
+    rewrite();
+    function time(t) {
+        var date=new Date();
+       date.setTime(t);
+        return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDay()+" "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
+    }
+    function changestate(e) {
+        var data=getData();
+        var id=e.parentNode.id;
+        data[id].done=true;
+        saveData(data);
+        rewrite();
+    }
+    function del(e){
+       var data=getData();
+        var id=e.parentNode.id;
+        data.splice(id,1);
+        saveData(data);
+        rewrite();
+    }
+    function  changecontent(e) {
+        var data=getData();
+        var id=e.parentNode.id;
+        var val=e.innerHTML;
+        data[id].content=val;
+        saveData(data);
+        rewrite()
+    }
+</script>
+</html>

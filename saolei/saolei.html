@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width:801px;
+            height:500px;
+            margin:0 auto;
+            background:darkseagreen;
+            margin:0 auto;
+            position: relative;
+            font-family: "微软雅黑";
+        }
+        .control{
+            width: 300px;
+            height:500px;
+            background:darkslategrey;
+            float: right;
+        }
+        .scene{
+            width: 500px;height: 500px;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            float: left;
+        }
+        /*用于每一个div的属性*/
+        .block{
+            width: 49px;height: 49px;
+            background:darkseagreen;
+            float: left;
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            font-size: 20px;
+            text-align: center;
+            line-height: 49px;
+        }
+        .lei{
+
+        }
+        .show{
+            background-image: url("img/lei1.jpg");
+            background-size: 100%;
+            background-position: center center;
+        }
+        /*num用于点击位置不是雷时添加的类名*/
+        .num{
+            background:bisque;
+        }
+        .flag{
+            background-image: url("img/qizhi.png");
+            background-size: 100%;
+            background-position: center center;
+        }
+        .over{
+            width: 200px;
+            height: 150px;
+            border-radius: 10%;
+            background: rgb(153, 50, 204);
+            position: absolute;top:0;left:142px;bottom: 0;
+            margin:auto;
+        }
+        .end{
+            width: 100%;
+            height: 80px;
+            font-size: 30px;
+            color: #000;
+            text-align: center;
+            line-height: 80px;
+        }
+        .restart{
+            width: 80px;
+            height: 50px;
+            background: springgreen;
+            color: #fff;
+            border: 0;
+            border-radius: 10%;
+            font-size: 20px;
+            text-align: center;
+            line-height: 50px;
+            margin:0 60px;
+            outline: none;
+        }
+        .z{
+            width: 120px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background:cornflowerblue;
+            border-radius:5%;
+            float: left;
+            margin:20px 90px;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+        .dif{
+            width: 120px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background:cornflowerblue;
+            border-radius:5%;
+            float: left;
+            margin:20px 90px;
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+        .start{
+            border: 0;
+        }
+        .phbz{
+            width: 200px;
+            height:300px;
+            border-radius: 10%;
+            background:  rgb(153, 50, 204);
+            position: absolute;top:0;left:142px;bottom: 0;
+            margin:auto;
+            padding: 15px;
+        }
+        .p{
+            top:-1000px;
+        }
+        .n{
+            height: 300px;
+        }
+        .n .zs{
+            width: 100%;
+            height: 50px;
+            background: springgreen;
+            border-radius: 5%;
+            color: #fff;
+            float: left;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .title{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 50px;
+            color: gold;
+            float: left;
+            margin-bottom: 15px;
+        }
+        .phbz .dengji{
+            width:100%;
+            height: 30px;
+            color: #fff;
+            border: 0;
+            border-radius: 10%;
+            font-size: 20px;
+            line-height:30px;
+            float: left;
+        }
+        .spend{
+            width:100%;
+            height: 30px;
+            color: #fff;
+            border: 0;
+            border-radius: 10%;
+            font-size: 20px;
+            line-height:30px;
+            float:left;
+        }
+        .mask{
+            width: 500px;height: 500px;
+            position: absolute;
+            top:0;
+            left: 0;
+            background: rgba(255,255,255,0.7);
+            display: none;
+        }
+        .return{
+            width: 100px;
+            height: 30px;
+            background: springgreen;
+            border-radius: 5%;
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+            float: left;
+            margin:20px 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="control">
+        <div class="timenum z">Time:60s</div>
+        <div class="flagnum z">flag:3</div>
+        <input type="button" value="start" class="start z">
+        <div class="phb z">排行榜</div>
+        <div class="dif">难度选择</div>
+    </div>
+    <div class="scene"></div>
+        <div class="phbz p">
+            <div class="title">排行榜</div>
+            <div class="dengji aa">first：  &nbsp;</div>
+            <div class="spend sa">剩余：&nbsp;</div>
+            <div class="dengji ab">second：  &nbsp;</div>
+            <div class="spend sb">剩余：&nbsp;</div>
+            <div class="dengji ac">third：  &nbsp;</div>
+            <div class="spend sc">剩余：&nbsp;</div>
+            <div class="return">返回</div>
+        </div>
+    <div class="mask c">
+        <div class="phbz n">
+            <div class="title zz">难度选择</div>
+            <div class="di zs">difficult</div>
+            <div class="mi zs">middle</div>
+            <div class="ea zs">easy</div>
+        </div>
+    </div>
+    <div class="mask b">
+        <div class="over">
+        <div class="end">游戏结束</div>
+        <input type="button" value="restart" class="restart">
+    </div>
+    </div>
+</body>
+<script src="jQuery.js"></script>
+<script>
+    var num=10;//雷的数量
+    var num1=10;
+    var time=60;
+    var besttime=localStorage.besttime?JSON.parse(localStorage.besttime):[];
+    var t;
+    var bili=0.9;
+    //时间函数
+    function times() {
+        $(".timenum").html("Time:"+time+"s");
+        console.log(time)
+        if(time==0){
+            clearInterval(t)
+            gameover()
+        }
+        time--;
+    }
+    //开始按钮
+    $(".start").click(function () {
+         $(".start").toggleClass(".restart");
+            createLei()
+    })
+    //排行榜
+    $(".phb").click(function () {
+        $(".p").animate({"top":0},1000);
+    })
+    $(".return").click(function () {
+        $(".p").animate({"top":"-1000px"},1000);
+    })
+    //难度选择
+    $(".dif").click(function () {
+        $(".c").css("display","block");
+    })
+        $(".di").click(function () {
+            num=15;num1=15;
+            bili=0.85;
+            $(".c").css("display","none");
+            $(".flagnum").html("flag:"+num1);
+        })
+        $(".mi").click(function () {
+            num=10;num1=10;
+            bili=0.9;
+            $(".c").css("display","none");
+            $(".flagnum").html("flag:"+num1);
+        })
+        $(".ea").click(function () {
+            num=3;num1=3;
+            bili=0.97;
+            $(".c").css("display","none");
+            $(".flagnum").html("flag:"+num1);
+        })
+    //创建游戏区的每一个块,产生雷
+    //创建div铺满整个游戏区
+   function createLei() {
+        t=setInterval(times,1000)
+        do{//保证雷的个数为10
+            $(".scene").empty();//插入前清空之前创建的所有元素
+            for(var i=0;i<10;i++){
+                for(var j=0;j<10;j++){
+                    var isLei=Math.random()>bili;//添加雷
+                    $("<div>")
+                            .addClass(function () {//有雷和无雷时的类名转换
+                                if(isLei){
+                                    return "block lei"
+                                }else{
+                                    return "block"
+                                }
+                            })
+                            .attr("id",i+"-"+j)//给每一个块添加id保存当前坐标
+                            .data("pos",{x:i,y:j})//拆分为坐标值
+                            .mousedown(mousedownEvent)
+                            .appendTo(".scene")
+                }
+            }
+        }while($(".lei").length!=num)
+    }
+    // e jQuery事件对象
+    function mousedownEvent(e) {
+          if(e.which==1){
+              leftclick.call(this);//传this指针  左击
+          }else{
+              rightclick.call(this);//传this指针 右击
+          }
+      }
+    function leftclick() {
+        if($(this).hasClass("flag")){
+            return
+        }
+        //判断当前点击的位置是否有雷
+        if($(this).hasClass("lei")){
+            $(".lei").addClass("show")
+            gameover();
+        }else{
+            $(this).addClass("num")
+            var pos=$(this).data("pos");
+            var n=0;//n 放置内容
+            //判断当前位置的周围位置是否有雷
+            for(var i=pos.x-1;i<=pos.x+1;i++){
+                for(var j=pos.y-1;j<=pos.y+1;j++){
+                    if($("#"+i+"-"+j).hasClass("lei")){
+                        n++;
+                    }
+                }
+            }
+            $(this).html(n)
+            if(n==0){//判断当前元素周围位置是否存在
+                for(var i=pos.x-1;i<=pos.x+1;i++){
+                    for(var j=pos.y-1;j<=pos.y+1;j++){
+                        var obj=$("#"+i+"-"+j);//obj jQuery对象
+                        //判断当前元素周围位置是否存在且未被点开时
+                        if(obj.length==1&&(!obj.hasClass("num"))){
+                           leftclick.call(obj[0])// leftclick().call(obj.get(0))
+                        }
+                    }
+                }
+            }
+        }
+    }
+    function rightclick() {
+        if($(this).hasClass("num")){
+            return
+        }
+        if($(this).hasClass("flag")){
+            $(this).removeClass("flag")
+            num++
+        }else{
+            num--;
+            if(num<0){
+                num++;
+                alert("选择错误")
+                return;
+            }
+            $(this).addClass("flag");
+            if(num==0){
+                if($(".flag").filter(".lei").length==num1){
+                     alert("成功")
+                    clearInterval(t);
+                 }
+                 //排行榜
+                if(besttime.length<3||(besttime.length>=3&&time<besttime[2].time1)){
+                    var player=prompt("请输入姓名");
+                    besttime.push({player ,time1:time});
+                    besttime.sort(function (a,b) {
+                        if(a.time1>b.time1){
+                            return -1;
+                        }else{
+                            return 1;
+                        }
+                    })
+                    if(besttime.length>3){
+                        besttime.pop();
+                    }
+                    localStorage.besttime=JSON.stringify(besttime);
+                }
+                $(".aa").html("first："+besttime[0].player)
+                $(".ab").html("second："+besttime[1].player)
+                $(".ac").html("third："+besttime[2].player)
+                $(".sa").html("剩余："+besttime[0].time1+"s")
+                $(".sb").html("剩余："+besttime[1].time1+"s")
+                $(".sc").html("剩余："+besttime[2].time1+"s")
+            }
+            $(".flagnum").html("flag:"+num);
+        }
+    }
+    function gameover() {
+        clearInterval(t)
+        $(".b").css("display","block");
+    }
+    //重新开始
+    $(".restart").click(function () {
+        $(".b").css("display","none");
+        time=60;
+        num=10;
+        num1=10;
+        $(".flagnum").html("flag:"+num1);
+        createLei()
+        t=setInterval(times,1000);
+
+    })
+    $(document).on("contextmenu",function (e) {
+        e.preventDefault()//处理浏览器默认行为
+    })
+
+</script>
+</html>
