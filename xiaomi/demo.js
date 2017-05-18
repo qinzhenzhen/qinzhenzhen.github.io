@@ -67,39 +67,51 @@ prev.onclick=function () {
     var  innersingle = document.querySelector(".danpinlan ul");
     var prev1=document.querySelector(".z");
     var next1=document.querySelector(".y");
+    var danpin=document.querySelector(".danpin")
     console.log(prev1,next1)
     // console.log(box)
-    var single= setInterval(singlemove, 1000);
+    var single= setInterval(singlemove, 3000);
     var num1 = 0;
+    var flag=true;
     function singlemove() {
         innersingle.style.transition = "all 0.5s";
-        num1++;
         next1.style.color="black";
+        num1++;
         innersingle.style.marginLeft = -1250 + "px";
         prev1.style.color="";
-        if (num1 ==1) {
+        if (num1 ==2) {
             next1.style.color="";
             prev1.style.color="black";
             innersingle.style.marginLeft = 0;
+            num1=0;
         }
     }
-  prev1.onmouseover=function () {
-      if(num1==1){
-        prev1.style.color="#ff6700";
-      }
+    prev1.onmouseover=function () {
+           if(!flag){
+           prev1.style.color="#ff6700";
+               prev1.onclick=function () {
+                   singlemove()
+               }
+               flag=true;
+           }else{
+               next1.onclick=function () {
+                   singlemove()
+               }
+               flag=false;
+           }
+        }
+    next1.onmouseover=function () {
+           if(flag){
+           next1.style.color="#ff6700";
+           }
+        flag=false;
+       }
+danpin.onmouseover=function () {
+    clearInterval(single)
 }
-   next1.onmouseover=function () {
-    if(num1==0){
-        next1.style.color="#ff6700";
-    }
+danpin.onmouseout=function () {
+    single= setInterval(singlemove, 3000);
 }
-    prev1.onclick=function () {
-        singlemove()
-
-    }
-  next.onclick=function () {
-     singlemove()
-  }
 //导航侧栏
 var asl=document.querySelectorAll(".as .asl");
 var secindex=document.querySelectorAll(".asidesec");
@@ -112,3 +124,21 @@ Array.from(asl).forEach(function (v,i) {
         secindex[i].style.display="none";
     }
 })
+//头部二级菜单
+var seclisth=document.querySelectorAll(".clearfix");
+var headgps=document.querySelectorAll(".sss");
+var bigbox=document.querySelector(".gpl")
+console.log(bigbox);
+Array.from(headgps).forEach(function (vg,ig) {
+    headgps[ig].onmouseover=function () {
+        seclisth[ig].style.height="206px";
+    }
+    headgps[ig].onmouseout=function () {
+        seclisth[ig].style.height="";
+    }
+    bigbox.onmouseout=function () {
+        seclisth[ig].style.height="";
+        seclisth[ig].style.transition="all 0.3s linear";
+    }
+})
+

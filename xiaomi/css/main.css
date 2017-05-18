@@ -68,9 +68,9 @@ header{
 }
 nav{
 	width: 1226px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	margin: 0 auto;
-	/* height: 200px; */
+	 height: 80px;
 	background: #fff;
 	padding-top: 22px;
 }
@@ -94,12 +94,46 @@ nav .gpl{
 	width: 638px;
 	 height: 49px;
 	margin-top: 17.5px;
+	position: relative;
 }
 nav .gpl .gpli{
 	float: left;
 	padding-right: 20px;
+
     
 }
+ .children-list{
+     position: absolute;
+	 left:-230px;
+	 top:40px;
+	 margin: auto;
+	 width:1224px;
+	 height:0;
+	 overflow: hidden;
+	 z-index: 999;
+	 text-align: center;
+	 background:#fff;
+	 /*transition: all 0.3s linear;*/
+ }
+ .children-list  li{
+	 width: 204px;
+	 height: 206px;
+	 float: left;
+ }
+ .figure{
+		border-right:1px solid #dddddd;
+ }
+ .nob{
+	 border-right:none;
+ }
+ .flags .flag{
+	 display: inline-block;
+	 height: 18px;
+	 padding: 1px 20px;
+	 border: 1px solid #ff6700;
+	 color: #ff6700;
+	 line-height: 18px;
+ }
 nav .gpl .gpli .ind:hover{
 	color: red;
     
@@ -1151,22 +1185,61 @@ pre{
 	background: #FEFEFE ;
 	float: left;
      border-top: 1px solid #FFAC13;
-     padding-left: 37px;
-         position: relative;
-         padding-bottom: 30px;
-          margin: 0 auto;
-              transition: all 0.5s linear;
+     position: relative;
+     padding-bottom: 30px;
+     margin: 0 auto;
+     transition: all 0.5s linear;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
 }
 .nr1:hover{
 	box-shadow:0px 5px 20px 5px rgba(0,0,0,0.2); 
 	transform: translateY(-2px);
 
 }
+.contain{
+	width: 1184px;
+	height: 340px;
+	text-align: center;
+	position: absolute;
+	bottom: 0;
+	left:0;
+
+}
+.seclist{
+	width: 296px;
+	height: 340px;
+	position: absolute;
+	left:0;
+	right:0;
+	bottom: 0;
+}
+.consmall{
+	width: 888px;
+	transition: all 0.5s linear;
+
+}
+ .con2{
+	 width: 1184px;
+	 transition: all 0.5s linear;
+ }
+ .con4{
+	 width: 1184px;
+	 transition: all 0.5s linear;
+
+ }
+ .contain .content{
+	 width: 296px;
+	 height: 340px;
+	 float: left;
+	 position: relative;
+ }
 .nr11{
 	font-size: 14px;
 	width:296px;
 	position: absolute;
-	top: 50px;
+	top: 40px;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -1176,37 +1249,36 @@ pre{
 .nr12{
 	font-size: 20px;
 	color: #333;
-     margin-top:90px; 
+     margin-top:5px;
 
 }
 .nr13{
-	width: 200px;
+	width: 296px;
+	padding: 0 20px;
 	font-size: 14px;
-	color: #C1B7CB;
+	color: #b0b0b0;
 	position: absolute;
-	top: 120px;
+	top: 30px;
 	left: 0;
 	right: 0;
-	margin: auto;
-     margin-top:10px; 
      text-align: center;
 
 }
 .nr14{
 	font-size: 14px;
 	color: #333;
-  position: absolute;
-	top: 180px;
+  	position: absolute;
+	top: 265px;
 	left: 0;
 	right: 0;
 	margin: auto;
 	 text-align: center;
 }
-.nr15 img{
+.nr15{
+	width: 296px;
 	position: absolute;
-	top: 220px;
+	top: 110px;
 	left: 0;
-	right: 0;
 	margin: auto;
 
 }
@@ -1220,24 +1292,24 @@ pre{
 	right: 0;
 	margin: auto;
 	overflow: hidden;
+	padding: 0 100px;
+	display: flex;
+	justify-content: space-between;
 }
-.nr1 ul  .onez{
-	width: 10px;
-	height: 10px;
-	background: #fefefe;
-	border: 2px solid #FF6F0F ;
-	border-radius: 50%;
-	float: left;
-	margin-left: 100px;
-}
-.nr1 ul  .twoz{
+.nr ul  .twoz{
 	width: 6px;
 	height: 6px;
 	background: #B0B0B0;
 	border-radius: 50%;
 	float: left;
-	margin-left: 30px;
 }
+ .nr ul  .onez{
+	 width: 10px;
+	 height: 10px;
+	 background: #fefefe;
+	 border: 2px solid #FF6F0F ;
+	 border-radius: 50%;
+ }
 .nr2{
 	width:296px;
 	height: 420px;
@@ -1250,6 +1322,7 @@ pre{
      margin: 0 auto;
     margin-left: 14px;
      transition: all 0.5s linear;
+	overflow: hidden;
 }
 .nr2:hover{
 	box-shadow:0px 5px 20px 5px rgba(0,0,0,0.2); 
@@ -1266,7 +1339,17 @@ pre{
 	right: 0;
 	margin: auto;
 	overflow: hidden;
+	padding: 0 80px;
+	display: flex;
+	justify-content: space-between;
 }
+ .nr2 ul  .twoz{
+	 width: 6px;
+	 height: 6px;
+	 background: #B0B0B0;
+	 border-radius: 50%;
+	 float: left;
+ }
 .nr2 ul  .onez{
 	width: 10px;
 	height: 10px;
@@ -1274,16 +1357,8 @@ pre{
 	border: 2px solid #FF6F0F ;
 	border-radius: 50%;
 	float: left;
-	margin-left: 100px;
 }
-.nr2 ul  .twoz{
-	width: 6px;
-	height: 6px;
-	background: #B0B0B0;
-	border-radius: 50%;
-	float: left;
-	margin-left: 30px;
-}
+
 .nr3{
 	width:296px;
 	height: 420px;
@@ -1296,6 +1371,7 @@ pre{
           margin: 0 auto;
           margin-left: 14px;
      transition: all 0.5s linear;
+	overflow: hidden;
 }
 .nr3:hover{
 	box-shadow:0px 5px 20px 5px rgba(0,0,0,0.2); 
@@ -1311,25 +1387,12 @@ pre{
 	left: 0;
 	right: 0;
 	margin: auto;
-	overflow: hidden;
+	padding: 0 100px;
+	display: flex;
+	justify-content: space-between;
+
 }
-.nr3 ul  .onez{
-	width: 10px;
-	height: 10px;
-	background: #fefefe;
-	border: 2px solid #FF6F0F ;
-	border-radius: 50%;
-	float: left;
-	margin-left: 100px;
-}
-.nr3 ul  .twoz{
-	width: 6px;
-	height: 6px;
-	background: #B0B0B0;
-	border-radius: 50%;
-	float: left;
-	margin-left: 30px;
-}
+
 .nr4{
 	width:296px;
 	height: 420px;
@@ -1337,11 +1400,12 @@ pre{
 	float: left;
      border-top: 1px solid #B3CAB8;
      padding-left: 37px;
-         position: relative;
-         padding-bottom: 30px;
-          margin: 0 auto;
-          margin-left: 14px;
-           transition: all 0.5s linear;
+     position: relative;
+     padding-bottom: 30px;
+      margin: 0 auto;
+     margin-left: 14px;
+    transition: all 0.5s linear;
+	overflow: hidden;
 }
 .nr4:hover{
 	box-shadow:0px 5px 20px 5px rgba(0,0,0,0.2); 
@@ -1357,24 +1421,9 @@ pre{
 	left: 0;
 	right: 0;
 	margin: auto;
-	overflow: hidden;
-}
-.nr4 ul  .onez{
-	width: 10px;
-	height: 10px;
-	background: #fefefe;
-	border: 2px solid #FF6F0F ;
-	border-radius: 50%;
-	float: left;
-	margin-left: 100px;
-}
-.nr4 ul  .twoz{
-	width: 6px;
-	height: 6px;
-	background: #B0B0B0;
-	border-radius: 50%;
-	float: left;
-	margin-left: 30px;
+	display:flex;
+	padding: 0 80px;
+	justify-content: space-between;
 }
 .nr4 ul .twoz:hover{
 	background: #FF6F0F;
@@ -1392,8 +1441,7 @@ pre{
 	width: 20px;
 	height: 50px;
 	position: absolute;
-	top: 0px;
-	bottom: 0px;
+	top: 95px;
 	right: 276px;
 	margin: auto;
     background: #D9D9D9;
@@ -1407,8 +1455,7 @@ pre{
 	width: 20px;
 	height: 50px;
 	position: absolute;
-	top: 0px;
-	bottom: 0px;
+	top: 95px;
 	left: 276px;
 	margin: auto;
     background: #D9D9D9;
@@ -1653,3 +1700,4 @@ margin-bottom: 20px;
 
 /* 	margin-left: 50px; */
 }
+
