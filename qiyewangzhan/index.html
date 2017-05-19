@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="css/base.css">
         <link rel="stylesheet" href="css/main.css">
+		<script src="JQuery.js"></script>
     </head>
     <body> 
     <!-- 头部开始 -->
@@ -28,34 +29,43 @@
 	    			<div class="right"></div>
 	    		</li>
 	    		<li>
-	    			<div class="left">面点推荐</div>
+	    			<div class="left"><a href="mdtj.html">面点推荐</a></div>
 	    			<div class="right"></div>
 	    		</li>
 	    		<li>
-	    			<div class="left">品牌故事</div>
+	    			<div class="left"><a href="ppgs.html">品牌故事</a></div>
 	    			<div class="right"></div>
 	    		</li>
 	    		<li>
-	    			<div class="left">新闻中心</div>
+	    			<div class="left"><a href=""><a href="jmhz.html">新闻中心</a></a></div>
 	    			<div class="right"></div>
 	    		</li>
 	    		<li>
-	    			<div class="left">面点师</div>
-	    			<div class="right"></div>
-	    		</li>
-	    		<li>
-	    			<div class="left">加盟合作</div>
-	    			<div class="right"></div>
+	    			<div class="left"><a href="mds.html"></a>面点师</div>
 	    		</li>
 	    	</ul>
 	    	<div class="banner">
+				<ul class="pic">
+					<li class="active"><a href="">
+						<img src="image/banner.png" alt="">
+						<div class="biaoyu"></div>
+					</a></li>
+					<li><a href="">
+						<img src="image/bnnner2.png" alt="">
+						<div class="biaoyu"></div>
+					</a></li>
+					<li><a href="">
+						<img src="image/banner.png" alt="">
+						<div class="biaoyu"></div>
+					</a></li>
+				</ul>
 	    		<ul class="hua">
-	    			<li></li>
-	    			<li></li>
+	    			<li class="left"></li>
+	    			<li class="right"></li>
 	    		</ul>
-	    		<div class="biaoyu"></div>
+
 	    		<ul class="lunbo">
-	    			<li></li>
+	    			<li class="active"></li>
 	    			<li></li>
 	    			<li></li>
 	    		</ul>
@@ -288,4 +298,41 @@
     	</div>
     <!-- 底部结束 -->
     </body>
+	<script>
+			function banner(lun,banli,box,pre,next) {
+				lun.mouseover(function () {
+					var index=$(this).index()
+					lun.filter(".active").removeClass("active").end().eq(index).addClass("active"),
+							banli.filter(".active").removeClass("active").end().eq(index).addClass("active")
+					num=index;
+				})
+				var num=0;
+				var t=setInterval(move,3000)
+				function move() {
+					num++;
+					if(num==lun.length){
+						num=0
+					}
+					lun.filter(".active").removeClass("active").end().eq(num).addClass("active"),
+							banli.filter(".active").removeClass("active").end().eq(num).addClass("active")
+				}
+				box.hover(function () {
+					clearInterval(t)
+				},function () {
+					t=setInterval(move,3000)
+				})
+				next.click(function () {
+					move()
+				})
+				pre.click(function () {
+					num-=2;
+					if(num==-2){
+						num=lun.length-2;
+					}
+					move()
+				})
+			}
+			banner($(".banner .lunbo li"),$(".banner .pic li"), $(".banner"),$(".banner .hua .left"),$(".banner .hua .right"));
+
+	</script>
 </html>

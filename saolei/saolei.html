@@ -4,14 +4,30 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        .box{
+            width: 100%;
+            height:688px;
+            background-image: url("img/a.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-size:150px;
+            color: #f9fffb;
+            text-align: center;
+            line-height: 500px;
+            font-family: "微软雅黑";
+        }
         .container{
             width:801px;
             height:500px;
-            margin:0 auto;
             background:darkseagreen;
-            margin:0 auto;
-            position: relative;
-            font-family: "微软雅黑";
+            position:absolute;
+            top:0;left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            opacity: 0;
+            transition: all 1s linear;
+            
         }
         .control{
             width: 300px;
@@ -195,6 +211,9 @@
     </style>
 </head>
 <body>
+<div class="box">
+    扫雷游戏
+</div>
 <div class="container">
     <div class="control">
         <div class="timenum z">Time:60s</div>
@@ -412,6 +431,8 @@
     $(document).on("contextmenu",function (e) {
         e.preventDefault()//处理浏览器默认行为
     })
-
+    $(".box").hover(function () {
+        $(".container").css("opacity",1)
+    })
 </script>
 </html>

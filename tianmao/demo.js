@@ -94,21 +94,6 @@ var totop=document.querySelector(".fix .top");
 totop.onclick=function () {
     animate(document.body,{scrollTop:0},500)
 }
-//手机版
-// var w1=document.querySelector("#phonez a");
-// var wChart=document.querySelector(".phone");
-// var wChartz=document.querySelector(".phone .pm");
-// var height=215;
-// var width=175;
-// w1.onmouseover=function () {
-//     wChart.style.height=height+"px";
-//     wChart.style.width=width+"px";
-//     wChart.style.display="block";
-// }
-// w1.onmouseout=function () {
-//     wChart.style.height=0;
-//     wChart.style.width=0;
-// }
 var num=0;
 var t=setInterval(move,1000);
 function move() {
@@ -168,12 +153,8 @@ var bigbnbox=document.querySelector(".banners ");
 var secnav=document.querySelectorAll("aside ul li .asidesec")
 Array.from(indexnav).forEach(function (asideele,index5) {
     asideele.onmouseover=function (elzz) {
-        // elzz.stopPropagation();
         secnav[index5].style.display="block";
     }
-    // bigbnbox.onmouseover=function () {
-    //     secnav[index5].style.display="block";
-    // }
     asideele.onmouseout=function () {
         secnav[index5].style.display="none";
     }

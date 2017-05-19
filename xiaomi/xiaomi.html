@@ -3240,58 +3240,41 @@
 	<script>
 		// addClass removeClass
 		//给所有的移除active,给当前添加active
-		$(".nr1 ul .twoz").click(function () {
-		  $(".nr1 ul .twoz").removeClass("onez");
-		    $(this).addClass("onez");
-		 })
-		var numc=0;
-		$(".nr1 ul .twoz").each(function (i) {
-				$(".nr1 ul .twoz").eq(i).click(function () {
-					numc++;
-					if(numc==1){
-						$(".con1").css("left",0);
-					}
-					$(".con1").css("left",i*(-296)+"px");
-				})
-		})
-		$(".nr2 ul .twoz").click(function () {
-			$(".nr2 ul .twoz").removeClass("onez");
-			$(this).addClass("onez");
-		})
-		$(".nr2 ul .twoz").each(function (i) {
-			$(".nr2 ul .twoz").eq(i).click(function () {
-				numc++;
-				if(numc==1){
-					$(".con2").css("left",0);
-				}
-				$(".con2").css("left",i*(-296)+"px");
+//		$(".nr1 ul .twoz").click(function () {
+//		  $(".nr1 ul .twoz").removeClass("onez");
+//		    $(this).addClass("onez");
+//		 })
+// h 轮播点   x 图片的容器   l  左键 r 右键  i 轮播点个数
+		function lunbo(h,x,l,r,i) {
+			h.click(function () {
+				var index=$(this).index();
+				h.filter(".onez").removeClass("onez").end().eq(index).addClass("onez");
+				x.css("left",-296*index+"px");
 			})
-		})
-		$(".nr3 ul .twoz").click(function () {
-			$(".nr3 ul .twoz").removeClass("onez");
-			$(this).addClass("onez");
-		})
-		$(".nr3 ul .twoz").each(function (i) {
-			$(".nr3 ul .twoz").eq(i).click(function () {
-				numc++;
-				if(numc==1){
-					$(".con3").css("left",0);
+			var num=0;
+			function zy() {
+				num++;
+				x.css("left",-296*num+"px");
+			}
+			r.click(function () {
+				if(num==0||num==1||num==(i-1)){
+					zy();
+					h.filter(".onez").removeClass("onez").end().eq(num).addClass("onez");
 				}
-				$(".con3").css("left",i*(-296)+"px");
+
 			})
-		})
-		$(".nr4 ul .twoz").click(function () {
-			$(".nr4 ul .twoz").removeClass("onez");
-			$(this).addClass("onez");
-		})
-		$(".nr4 ul .twoz").each(function (i) {
-			$(".nr4 ul .twoz").eq(i).click(function () {
-				numc++;
-				if(numc==1){
-					$(".con4").css("left",0);
+			l.click(function () {
+				if(num==1||num==2||num==i){
+					num-=2;
+					zy();
+					h.filter(".onez").removeClass("onez").end().eq(num).addClass("onez");
 				}
-				$(".con4").css("left",i*(-296)+"px");
 			})
-		})
+		}
+		lunbo($(".nr1 ul .twoz"),$(".nr1 .con1"),$(".nr1 .hua .hua1"),$(".nr1 .hua .hua2"),2);
+		lunbo($(".nr2 ul .twoz"),$(".nr2 .con2"),$(".nr2 .hua .hua1"),$(".nr2 .hua .hua2"),3);
+		lunbo($(".nr3 ul .twoz"),$(".nr3 .con3"),$(".nr3 .hua .hua1"),$(".nr3 .hua .hua2"),2);
+		lunbo($(".nr4 ul .twoz"),$(".nr4 .con4"),$(".nr4 .hua .hua1"),$(".nr4 .hua .hua2"),3);
+
 	</script>
 </html>

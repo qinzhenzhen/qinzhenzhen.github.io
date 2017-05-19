@@ -114,6 +114,10 @@ header{
 	line-height: 23px;
 	text-align: center;
 	margin-right: 28px;
+	cursor: pointer;
+}
+.nav li .left：hover{
+	color: #e4c100;
 }
 .nav .right{
 	width: 8px;
@@ -130,12 +134,22 @@ header{
 	width: 100%;
 	height: 750px;
 	float: left;
-	padding: 0 30px;
 	position: relative;
-	background-image: url('../image/banner.png');
-	background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;	
+}
+.banner .pic{
+	width: 100%;
+	height: 750px;
+	float: left;
+	position: relative;
+}
+.banner .pic li{
+    width: 100%;
+	height: 750px;
+	position: absolute;
+	top:0;left:0;
+}
+.banner .pic li.active{
+	z-index: 1;
 }
 .banner .hua{
 	width:100%;
@@ -143,15 +157,22 @@ header{
 	  display: flex;
     justify-content: space-between;
 	flex-wrap: nowrap;
-	margin-top: 325px;
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left:0;
+	right:0;
+	z-index: 20;
+	margin:auto;
 }
 .banner .hua li{
-	width: 99px;
-	height: 99px;
+	width: 80px;
+	height: 80px;
 	background-image: url('../image/hua.png');
 	background-position: center center;
     background-repeat: no-repeat;
-    background-size: 100%;	
+    background-size: 100%;
+	cursor: pointer;
 }
 .banner .hua li:nth-child(1){
 		background-image: url('../image/hua1.png');
@@ -182,6 +203,7 @@ header{
 	 display: flex;
     justify-content: space-between;
 	flex-wrap: nowrap;
+	z-index: 5;
 }
 .banner .lunbo li{
 		width: 20px;
@@ -189,7 +211,7 @@ header{
 		border-radius: 50%;
 		background:#afb2b4;		 
 }
-.banner .lunbo li:nth-child(2){
+.banner .lunbo li.active{
 		border: 4px solid #fff;
 		background: none;
 }

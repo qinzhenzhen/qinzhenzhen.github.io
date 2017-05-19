@@ -1450,6 +1450,7 @@ pre{
     line-height: 50px;
     text-align: center;
     color: #fff;
+	cursor: pointer;
 }
 .hua2{
 	width: 20px;
@@ -1463,6 +1464,7 @@ pre{
       line-height: 50px;
         text-align: center;
         color: #fff;
+	cursor: pointer;
 }
 .nr1:hover .hua1{
 	animation: xianshiz .5s linear  forwards;

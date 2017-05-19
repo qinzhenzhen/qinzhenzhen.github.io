@@ -107,6 +107,20 @@ header{
     justify-content: space-between;
 	flex-wrap: nowrap;
 }
+.banner .biaoyu{
+	width: 698px;
+	height: 341px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background-image: url('../image/z1.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
 .nav .left{
 	overflow: hidden;
 	height: 23px;
