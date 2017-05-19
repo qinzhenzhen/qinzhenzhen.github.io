@@ -24,9 +24,11 @@
       <file leaf-file-name="homepage.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/homepage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="971">
-              <caret line="353" column="9" selection-start-line="353" selection-start-column="9" selection-end-line="353" selection-end-column="9" />
-              <folding />
+            <state relative-caret-position="1349">
+              <caret line="157" column="100" selection-start-line="157" selection-start-column="100" selection-end-line="157" selection-end-column="100" />
+              <folding>
+                <element signature="e#16825#27841#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,15 +87,15 @@
       <updated>1494859861597</updated>
       <workItem from="1494859863816" duration="557000" />
       <workItem from="1494861072483" duration="1678000" />
-      <workItem from="1495158873813" duration="2155000" />
+      <workItem from="1495158873813" duration="2428000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4390000" />
+    <option name="totallyTimeSpent" value="4663000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1378" height="744" extended-state="1" />
+    <frame x="-8" y="0" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -126,7 +128,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#16825#27841#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -134,15 +138,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#16825#27841#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="971">
-          <caret line="353" column="9" selection-start-line="353" selection-start-column="9" selection-end-line="353" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="1349">
+          <caret line="157" column="100" selection-start-line="157" selection-start-column="100" selection-end-line="157" selection-end-column="100" />
+          <folding>
+            <element signature="e#16825#27841#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
