@@ -6,6 +6,25 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/base.css">
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $(window).scroll(function () {
+                var st=$(this).scrollTop();
+                var ch=$(this).height();
+                $("img").filter(function () {
+                    return $(this).attr("src")=="";
+                }).each(function (index,img) {
+                    if((st+ch)>$(img).offset().top){
+                        $(img).attr("src",function () {
+                            return $(this).attr("data-src")
+                        })
+                    }
+                })
+
+            })
+        })
+    </script>
 </head>
 <body>
 <!-- 头部开始 -->
@@ -300,18 +319,30 @@
             <div class="zt">商品超市</div>
         </div>
         <div class="bny">
-            <a href="">天猫超市<img src="img/cat.png" alt=""></a>
-            <a href="">天猫国际<img src="img/cat.png" alt=""></a>
-            <a href="">天猫会员<img src="img/cat.png" alt=""></a>
-            <a href="">天猫超市<img src="img/cat.png" alt=""></a>
-            <a href="">品牌街<img src="img/cat.png" alt=""></a>
-            <a href="">电器城<img src="img/cat.png" alt=""></a>
-            <a href="">喵鲜生<img src="img/cat.png" alt=""></a>
-            <a href="">医药馆<img src="img/cat.png" alt=""></a>
-            <a href="">营业厅<img src="img/cat.png" alt=""></a>
-            <a href="">魅力值<img src="img/cat.png" alt=""></a>
-            <a href="">飞猪旅行<img src="img/cat.png" alt=""></a>
-            <a href="">苏宁易购<img src="img/cat.png" alt=""></a>
+            <a href="">天猫超市<img src="" alt="" data-src="img/cat.png"
+            ></a>
+            <a href="">天猫国际<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">天猫会员<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">天猫超市<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">品牌街<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">电器城<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">喵鲜生<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">医药馆<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">营业厅<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">魅力值<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">飞猪旅行<img src="" alt="" data-src="img/cat.png"
+            >
+            <a href="">苏宁易购<img src="" alt="" data-src="img/cat.png"
+            >
         </div>
     </div>
         <aside>
@@ -3420,38 +3451,38 @@
 <div class="lian">
     <div class="lianzuo">
         <div class="huibo">
-            <a href=""><img src="img/lian2.jpg_.webp" alt="" class="lianyi"></a>
-            <a href=""><img src="img/ydl1.jpg" alt="" class="lianyi"></a>
-            <a href=""><img src="img/lian4.jpg_.webp" alt="" class="lianyi"></a>
-            <a href=""><img src="img/zz1.jpg_.webp" alt="" class="lianyi"></a>
-            <a href=""><img src="img/zz2.jpg_.webp" alt="" class="lianyi"></a>
-            <a href=""><img src="img/zz3.jpg_.webp" alt="" class="lianyi"></a>
-            <img src="img/miao.png" alt="" class="miao">
+            <a href=""><img src="" alt="" class="lianyi" data-src="img/lian2.jpg_.webp"></a>
+            <a href=""><img src="" alt="" class="lianyi" data-src="img/ydl1.jpg"></a>
+            <a href=""><img src="" alt="" class="lianyi" data-src="img/lian4.jpg_.webp"></a>
+            <a href=""><img src="" alt="" class="lianyi" data-src="img/zz1.jpg_.webp"></a>
+            <a href=""><img src="" alt="" class="lianyi" data-src="img/zz2.jpg_.webp"></a>
+            <a href=""><img src="" alt="" class="lianyi" data-src="img/zz3.jpg_.webp"></a>
+            <img src="" alt="" class="miao" data-src="img/miao.png">
         </div>
         <div class="xiaotu">
             <ul>
                 <li>
-                    <a href=""><img src="img/lian2.jpg_.webp" alt=""></a>
+                    <a href=""><img src="" alt="" data-src="img/lian2.jpg_.webp"></a>
                     <div class="mask"></div>
                 </li>
                 <li>
-                    <a href=""><img src="img/ydl1.jpg" alt=""></a>
+                    <a href=""><img src="" alt="" data-src="img/ydl1.jpg"></a>
                     <div class="mask"></div>
                 </li>
                 <li>
-                    <a href=""><img src="img/lian4.jpg_.webp" alt=""></a>
+                    <a href=""><img src="" alt="" data-src="img/lian4.jpg_.webp"></a>
                     <div class="mask"></div>
                 </li>
                 <li>
-                    <a href=""><img src="img/zz1.jpg_.webp" alt=""></a>
+                    <a href=""><img src="" alt="" data-src="img/zz1.jpg_.webp"></a>
                     <div class="mask"></div>
                 </li>
                 <li>
-                    <a href=""><img src="img/zz2.jpg_.webp" alt=""></a>
+                    <a href=""><img src="" alt="" data-src="img/zz2.jpg_.webp"></a>
                     <div class="mask"></div>
                 </li>
                 <li>
-                    <a href=""><img src="img/zz3.jpg_.webp" alt=""></a>
+                    <a href=""><img src="" alt="" data-src="img/zz3.jpg_.webp"></a>
                     <div class="mask"></div>
                 </li>
             </ul>
@@ -3465,7 +3496,7 @@
                 直播预告
             </div>
             <div class="im">
-                <img src="img/xiazai.png" alt="">
+                <img src="" alt="" data-src="img/xiazai.png">
             </div>
             <div class="youl">
                 <ul class="inner">
@@ -3493,7 +3524,7 @@
     <div class="lianyou">
         <ul>
             <li>
-                <img src="img/lian5.jpg_.webp">
+                <img src="" data-src="img/lian5.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3501,66 +3532,49 @@
 
             </li>
             <li>
-                <img src="img/lian6.jpg_.webp">
+                <img src="" data-src="img/lian6.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
                 </div>
             </li>
             <li>
-                <img src="img/lian7.jpg_.webp">
+                <img src="" data-src="img/lian7.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20
                         <input type="button" value="点击进入" class="shuru">
                 </div>
             </li>
             <li>
-                <img src="img/lian8.jpg_.webp">
+                <img src="" data-src="img/lian8.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
                 </div>
             </li>
             <li>
-                <img src="img/lian9.jpg_.webp">
+                <img src="" data-src="img/lian9.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
                 </div>
             </li>
             <li>
-                <img src="img/lian10.jpg_.webp">
+                <img src="" data-src="img/lian10.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
                 </div>
             </li>
             <li>
-                <img src="img/lian11.jpg_.webp">
+                <img src="" data-src="img/lian11.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
                 </div>
             </li>
             <li>
-                <img src="img/lian12.jpg_.webp">
-                <div class="juxing">
-                    <p>优惠券￥20</p>
-                    <input type="button" value="点击进入" class="shuru">
-
-                </div>
-            </li>
-            <li>
-                <img src="img/lian13.jpg_.webp">
-                <div class="juxing">
-                    <p>优惠券￥20</p>
-                    <input type="button" value="点击进入" class="shuru">
-
-                </div>
-            </li>
-
-            <li>
-                <img src="img/lian14.jpg_.webp">
+                <img src="" data-src="img/lian12.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3568,7 +3582,16 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian15.jpg_.webp">
+                <img src="" data-src="img/lian13.jpg_.webp">
+                <div class="juxing">
+                    <p>优惠券￥20</p>
+                    <input type="button" value="点击进入" class="shuru">
+
+                </div>
+            </li>
+
+            <li>
+                <img src="" data-src="img/lian14.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3576,7 +3599,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian16.jpg_.webp">
+                <img src="" data-src="img/lian15.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3584,7 +3607,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian17.jpg_.webp">
+                <img src="" data-src="img/lian16.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3592,7 +3615,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian18.jpg_.webp">
+                <img src="" data-src="img/lian17.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3600,7 +3623,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian19.jpg_.webp">
+                <img src="" data-src="img/lian18.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3608,7 +3631,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian20.jpg_.webp">
+                <img src="" data-src="img/lian19.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3616,7 +3639,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian21.jpg_.webp">
+                <img src="" data-src="img/lian20.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3624,7 +3647,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian22.jpg_.webp">
+                <img src="" data-src="img/lian21.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3632,7 +3655,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian23.jpg_.webp">
+                <img src="" data-src="img/lian22.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3640,7 +3663,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian24.jpg_.webp">
+                <img src="" data-src="img/lian23.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3648,7 +3671,7 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian25.jpg_.webp">
+                <img src="" data-src="img/lian24.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
@@ -3656,14 +3679,22 @@
                 </div>
             </li>
             <li>
-                <img src="img/lian26.jpg_.webp">
+                <img src="" data-src="img/lian25.jpg_.webp">
+                <div class="juxing">
+                    <p>优惠券￥20</p>
+                    <input type="button" value="点击进入" class="shuru">
+
+                </div>
+            </li>
+            <li>
+                <img src="" data-src="img/lian26.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">
                 </div>
             </li>
             <li>
-                <img src="img/lian27.jpg_.webp">
+                <img src="" data-src="img/lian27.jpg_.webp">
                 <div class="juxing">
                     <p>优惠券￥20</p>
                     <input type="button" value="点击进入" class="shuru">

@@ -77,12 +77,10 @@ var box1=document.querySelector(".con-lun");
 var prev1=document.querySelector(".con-lun .prev");
 var next1=document.querySelector(".con-lun .next");
 var num1=4;
-var flagzz=true;
+var flagzz=true;//控制点击过快时能按步执行
 var set=setInterval(move1,2000);
 function move1() {
-    // if(num1==4||num1==6){
-        inner.style.transition="all 1s";
-    // }
+    inner.style.transition="all 1s";
     num1++;
     inner.style.marginLeft=-295*num1+"px";
 }
