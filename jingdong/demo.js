@@ -6,7 +6,7 @@ var minuteele=document.querySelector(".minute")
 var secondele=document.querySelector(".second");
 function getTime(){
     var now=new Date();
-    var after=new Date(2017,5,19,0,0,0);
+    var after=new Date(2017,4,20,0,0,0);
     var cha=after.getTime()-now.getTime();
     var hour=Math.floor(cha/(1000*60*60));
     hourele.innerHTML=hour<10?"0"+hour:hour;
